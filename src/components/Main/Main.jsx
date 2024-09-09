@@ -15,6 +15,12 @@ const Main = () => {
     setInput,
   } = useContext(Context);
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevent default action (e.g., form submission)
+      onSent();
+    }
+  };
   return (
     <div className="main">
       <div className="nav">
@@ -99,11 +105,18 @@ const Main = () => {
               value={input}
               type="text"
               placeholder="Enter a prompt here"
+              onKeyDown={handleKeyDown} // Add onKeyDown event handler here
             />
             <div>
               <img src={assets.gallery_icon} alt="icon" />
               <img src={assets.mic_icon} alt="icon" />
-              <img onClick={() => onSent()} src={assets.send_icon} alt="icon" />
+              {input ? (
+                <img
+                  onClick={() => onSent()}
+                  src={assets.send_icon}
+                  alt="icon"
+                />
+              ) : null}
             </div>
           </div>
           <p className="bottom-info">
