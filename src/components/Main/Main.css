@@ -84,6 +84,8 @@
   margin: auto;
 }
 
+/* SEARCHING */
+
 .search-box {
   display: flex;
   align-items: center;
@@ -112,11 +114,52 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  
+
 }
-.main .bottom-info{
+
+.main .bottom-info {
   font-size: 13px;
-  margin: 15px auto ;
+  margin: 15px auto;
   text-align: center;
   font-weight: 300;
+}
+
+/* RESULT SECTION WHEN THE RESPONSE IS THERE */
+
+.result {
+  padding: 0px 5px;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-title {
+  display: flex;
+  margin: 40px 40px;
+  align-items: center;
+  gap: 20px;
+}
+
+.result img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+
+/* LOADING */
+
+.loader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
